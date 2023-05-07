@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <div class="navbar-fixed nav_align">
+        <nav class="st">
+          <ul class="nav justify-content-end">
+            <li ><a href="/home">Home</a></li>
+            <li><a href="#">Compare</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="/">Login</a></li>
+            <li><a href="/register">Register </a></li>
+          </ul>
+        </nav>
+    </div>
+    <div class="summary" >
+        <form method="post" action="/summ">
+            <textarea name="text" cols="5" rows="20" required="true" class="summary" placeholder="Enter your text here" ></textarea>
+            <br><br>
+            <p> Word count -- {{ len_text}}</p>
+            <div class="flex-parent jc-center summary">
+              <button type="reset" class="btn btn-outline-primary">CLEAR</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              <button type="submit" class="btn btn-outline-primary">SUMMARIZE</button>
+            </div>
+            <div>
+                <p class="display-4">TEXT SUMMARY </p>
+                <P class="mb" >{{ final_summary }}</P>
+            </div>
+            <p> Word count -- {{ len_ntext}}</p>
+        </form>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
